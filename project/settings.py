@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-@7npr#v+lemn=@a1da7lncpybu1$u$mmt-91fmio$wp8)$(+*3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['web-production-0f3b9.up.railway.app','127.0.0:1' ]
 
 
 # Application definition
@@ -86,27 +86,27 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE':'mysql://root:lvmPvaG5SeG5aEeZ2Ib6@containers-us-west-37.railway.app:6902/railway',
-#         'NAME': 'railway',
-#         'USER': 'root',
-#         'PASSWORD': 'lvmPvaG5SeG5aEeZ2Ib6',
-#         'PORT': 6902,
-#         'HOST': 'containers-us-west-37.railway.app',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hackathon',
-        'USER': 'root',
-        'PASSWORD': 'muthanikatt',
-        'PORT': 3306,
-        'HOST': '127.0.0.1',
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'ZKOwkzr6TKgxwDRHoaYc',
+        'PORT': 6177,
+        'HOST': 'containers-us-west-170.railway.app',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'hackathon',
+#         'USER': 'root',
+#         'PASSWORD': 'muthanikatt',
+#         'PORT': 3306,
+#         'HOST': '127.0.0.1',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
