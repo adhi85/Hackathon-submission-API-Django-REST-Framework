@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
@@ -85,27 +86,27 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE':'mysql://root:lvmPvaG5SeG5aEeZ2Ib6@containers-us-west-37.railway.app:6902/railway',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'lvmPvaG5SeG5aEeZ2Ib6',
-        'PORT': 6902,
-        'HOST': 'containers-us-west-37.railway.app',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'hackathon',
+#         'ENGINE':'mysql://root:lvmPvaG5SeG5aEeZ2Ib6@containers-us-west-37.railway.app:6902/railway',
+#         'NAME': 'railway',
 #         'USER': 'root',
-#         'PASSWORD': 'muthanikatt',
-#         'PORT': 3306,
-#         'HOST': '127.0.0.1',
+#         'PASSWORD': 'lvmPvaG5SeG5aEeZ2Ib6',
+#         'PORT': 6902,
+#         'HOST': 'containers-us-west-37.railway.app',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hackathon',
+        'USER': 'root',
+        'PASSWORD': 'muthanikatt',
+        'PORT': 3306,
+        'HOST': '127.0.0.1',
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -155,6 +156,11 @@ SIMPLE_JWT = {
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
