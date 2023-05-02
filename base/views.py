@@ -33,7 +33,7 @@ def Routes(request):
         '/hack/<int:hackathon_id>/register/ : Register for the hackathon mentioned in the URL id by the authenticated user',
         '/hack/<int: hackathon_id>/submissions/ : Make Submissions to the hackathon mentioned in the URL only if the authenticated user has registered for the respective hackathon.',
         '/hack/enrolled/: Authenticated Users are be able to list the hackathons they are enrolled to',
-        'hack/<int: hackathon_id>/submissionsview/ : Authenticated Users are be able to view their submissions in the hackathon they were enrolled in.'
+        '/hack/<int: hackathon_id>/submissionsview/ : Authenticated Users are be able to view their submissions in the hackathon they were enrolled in.'
 
     ]
     return Response(routes)
